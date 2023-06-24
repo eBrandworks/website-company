@@ -102,7 +102,7 @@ function Carousel() {
             <div
               style={{
                 backgroundColor: "#F6BA18",
-                height: "750px",
+                height: "auto",
                 width: "100%",
                 position: "relative",
               }}
@@ -111,7 +111,7 @@ function Carousel() {
               <video
                 className="background-video carousel-img-overlay"
                 width={"100%"}
-                height={"auto"}
+                height={"100%"}
                 autoPlay
                 playsInline
                 loop
@@ -163,8 +163,8 @@ function Carousel() {
                           professionals providing premium A-Z Amazon tailored
                           services from small to 8-figures brand globally.
                         </p>
-                        <br />
-                        <button className="btn btn-orange w-50">
+                        {/* <br /> */}
+                        <button className="btn btn-orange ">
                           <a href="#contact" style={{ textDecoration: "none" }}>
                             GET FREE CONSULTATION
                           </a>

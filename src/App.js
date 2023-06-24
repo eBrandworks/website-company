@@ -13,6 +13,9 @@ import ChatModal from "./components/ChatModal";
 import Blogs from "./pages/Blogs/Blogs";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import BlogsMap from "./pages/Blogs/BlogsMap";
+import Team from "./pages/Team/Team";
+import TeamMap from "./pages/Team/TeamMap";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +43,8 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/thankyou" element={<ThankU />} />
         <Route path="/*" element={<PageNotFound />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs" element={<BlogsMap />} />
+        <Route path="/team" element={<TeamMap />} />
       </Routes>
       )
       }

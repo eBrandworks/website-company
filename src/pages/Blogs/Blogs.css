@@ -3,14 +3,36 @@
     font-weight: bolder;
     color: white;
 }
+.card-direction{
+    display: flex;
+    flex-direction: column-reverse;
+}
 .Blog-Header{
     background-image: linear-gradient(to bottom, rgba(27, 48, 53, 0.80), rgba(255, 153, 0, 0.90)),url("../../assets/blogs/banner.jpg");
     width: 100%;
     height: 300px;
     background-size: cover;
-    /* background-repeat: no-repeat;
-    background-position: center; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.btn-clr{
+    background-color: #1B3035;
+  color: #ffffff;
+  border-radius: 10px !important;
+}
+.btn-clr:hover{
+    background-color: white;
+    border-color: #1B3035;
+    color: #1B3035;
+    border-radius: 10px !important;
+}
+.blog-card:hover{
+    box-shadow: 0 1px 8px 0 #F9B218 !important;
+    cursor: pointer;
+}
+.blog-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
