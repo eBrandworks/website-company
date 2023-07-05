@@ -10,6 +10,7 @@ const Testimonals = () => {
             data-aos-duration="400"
             data-aos-easing="linear"
             data-aos-delay="200"
+            data-aos-once="true"
             className="mob-font-size"
           >
             <strong>Our Testimonals</strong>
@@ -32,12 +33,14 @@ const Testimonals = () => {
                 height="100px"
                 // className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="mobile-application-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -48,6 +51,7 @@ const Testimonals = () => {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -68,12 +72,14 @@ const Testimonals = () => {
                 height="100px"
                 // className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="mobile-application-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -84,6 +90,7 @@ const Testimonals = () => {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -104,12 +111,14 @@ const Testimonals = () => {
                 height="100px"
                 // className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="mobile-application-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -120,6 +129,7 @@ const Testimonals = () => {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"

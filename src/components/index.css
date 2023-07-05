@@ -284,20 +284,20 @@ li {
 }
 
 /* ------------------------- Our Services ---------------------- */
-.card-hov-2{
-  box-shadow: 0 1px 8px 0 #F9B218;
-}
 .card-hov:hover {
   box-shadow: 0 8px 16px 0 #F9B218;
+}
+.card-text{
+  font-size: 17px;
 }
 /* ------------------------- Portfolio ---------------------- */
 .carousel-control-prev-icon {
   background-color: #F9B218 !important;
-  padding: 20px !important;
+  padding: 10px !important;
 }
 .carousel-control-next-icon {
   background-color: #F9B218 !important;
-  padding: 20px !important;
+  padding: 10px !important;
 }
 .overlay {
   position: relative;
@@ -403,4 +403,21 @@ li {
   /* display: flex; */
   justify-content: center;
   align-self: center;
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+  .about-text{
+    font-size: 16px;
+  }
+  .about-logo{
+    width: 105%;
+  }
+  .card-text{
+    font-size: 15px;
+  }
+}
+@media (max-width: 425px){
+  .about-text{
+    font-size: 16px;
+  }
 }

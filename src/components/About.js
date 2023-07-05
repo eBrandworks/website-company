@@ -10,24 +10,25 @@ function About() {
   return (
     <div id="about">
       <div
-        className="container overflow-hidden"
+        className="container "
         //   style={{ paddingTop: state === "pricing" ? "2rem" : "0px" }}
       >
         <div className="row row-cols-1 row-cols-md-2 align-items-center">
           <div className="col">
-            <div className="card mb-5 border-0 text-start bg-none">
+            <div className="card mb-md-5 border-0 text-start bg-none">
               <div className="card-body pricing-card-style ">
                 <div className="row pt-5">
                   <h2
                     className="mob-font-size"
                     data-aos="fade-right"
+                    data-aos-once="true"
                     data-aos-anchor-placement="center-bottom"
                   >
                     <strong>ABOUT US</strong>
                   </h2>
                 </div>
 
-                <p data-aos="fade-up">
+                <p className=" m-0 about-text" data-aos="fade-up" data-aos-once="true">
                   We are a team of motivated and focused individuals and our
                   ultimate goal is result optimizations and maximum ROI. Our
                   performance marketing strategies are thorough and
@@ -47,12 +48,14 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="col mb-5">
+          <div className="col mb-md-0 p-0 mb-5">
             <img
               src={require("../assets/about_us/aws.gif")}
-              width="120%"
+              width="100%"
               height="100%"
+              className="about-logo"
               data-aos="fade-left"
+              data-aos-once="true"
               alt="about_us_1"
             />
           </div>

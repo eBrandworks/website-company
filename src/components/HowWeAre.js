@@ -70,6 +70,7 @@ function HowWeAre() {
           <div className="col">
             <div
               className="card  border-0 text-start bg-none"
+              data-aos-once="true"
               data-aos="zoom-in"
             >
               <div className="card-body pricing-card-style ">

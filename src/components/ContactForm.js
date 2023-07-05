@@ -102,10 +102,11 @@ function ContactForm() {
         //   style={{ paddingTop: state === "pricing" ? "2rem" : "0px" }}
       >
         <div className="row row-cols-1 row-cols-md-2 align-items-center">
-          <div className="col" data-aos="zoom-in">
+          <div className="col" data-aos-once="true" data-aos="zoom-in">
             <div
               className="card border-0 text-start bg-none"
               data-aos="zoom-in"
+              data-aos-once="true"
             >
               <div className="card-body pricing-card-style bg-none ">
                 <div className="row pt-5">
@@ -298,6 +299,7 @@ function ContactForm() {
                   <img
                     className="mob-dis-none"
                     data-aos="zoom-in"
+                    data-aos-once="true"
                     src={require("../assets/contact_us/map-vector-1.webp")}
                     alt="map-vector-1"
                   />
@@ -309,19 +311,19 @@ function ContactForm() {
                       className="link-light"
                       href="https://m.facebook.com/ebrandworkz/?refsrc=deprecated&_rdr"
                     >
-                      <li className="ms-3" data-aos="zoom-in">
+                      <li className="ms-3" data-aos-once="true" data-aos="zoom-in">
                         <FacebookIcon
                           className="social-icon-facebook"
-                          style={{ fontSize: "44" }}
+                          style={{ fontSize: "40" }}
                         />
                       </li>
                     </a>
 
                     <a className="link-light" href="#">
-                      <li className="ms-3" data-aos="zoom-in">
+                      <li className="ms-3" data-aos-once="true" data-aos="zoom-in">
                         <InstagramIcon
                           className="social-icon-instagram"
-                          style={{ fontSize: "44" }}
+                          style={{ fontSize: "40" }}
                         />
                       </li>
                     </a>
@@ -330,10 +332,10 @@ function ContactForm() {
                       className="link-light"
                       href="https://www.linkedin.com/company/ebrandworks/?originalSubdomain=pk"
                     >
-                      <li className="ms-3" data-aos="zoom-in">
+                      <li className="ms-3" data-aos-once="true" data-aos="zoom-in">
                         <LinkedInIcon
                           className="social-icon-linkedin"
-                          style={{ fontSize: "44" }}
+                          style={{ fontSize: "40" }}
                         />
                       </li>
                     </a>

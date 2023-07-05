@@ -13,6 +13,7 @@ function OurServices() {
         <div className="row text-center pt-5">
           <h2
             data-aos="fade-up"
+            data-aos-once="true"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration="400"
             data-aos-easing="linear"
@@ -23,6 +24,7 @@ function OurServices() {
           <p
             className="px-5"
             data-aos="fade-up"
+            data-aos-once="true"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration="400"
             data-aos-easing="linear"
@@ -40,12 +42,14 @@ function OurServices() {
                 height="auto"
                 className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="web-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -56,6 +60,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -73,19 +78,21 @@ function OurServices() {
             </div>
           </div>
           <div className="col">
-            <div className="card border-0 align-items-center h-100 card-hov-2">
+            <div className="card border-0 align-items-center h-100 card-hov">
               <img
                 src={require("../assets/our_services/optimise.png")}
                 width="20%"
                 height="auto"
                 className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="fintech-solutions"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -96,6 +103,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -120,12 +128,14 @@ function OurServices() {
                 className="pt-3"
                 // className="py-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="mobile-application-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -136,6 +146,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -159,12 +170,14 @@ function OurServices() {
                 height="auto"
                 className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="graphic-designing"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -175,6 +188,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -198,12 +212,14 @@ function OurServices() {
                 height="auto"
                 className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="web-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -214,6 +230,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -235,12 +252,14 @@ function OurServices() {
                 height="auto"
                 className="pt-3"
                 data-aos="zoom-in"
+                data-aos-once="true"
                 alt="mobile-application-development"
               />
               <div className="card-body">
                 <h5
                   className="card-title"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"
@@ -251,6 +270,7 @@ function OurServices() {
                 <p
                   className="card-text"
                   data-aos="fade-up"
+                  data-aos-once="true"
                   data-aos-anchor-placement="center-bottom"
                   data-aos-duration="400"
                   data-aos-easing="linear"

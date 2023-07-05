@@ -37,12 +37,11 @@ function Home() {
       <hr />
       <Testimonals />
       <hr />
-
       <HowWeAre />
       <hr />
-
       {/* <Clients /> */}
       <ContactForm />
+      <hr />
       {/* <Footer /> */}
     </div>
   );

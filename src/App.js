@@ -29,13 +29,9 @@ function App() {
 
   return (
     <div className="App">
-      
-      
-      
       <Header/>
       <div style={{position:"fixed",bottom:"10px",right:"10px",zIndex:"1"}}>
           <ChatModal />
-
       </div>
       {showModal ? <Modall />:(
         <Routes>
@@ -46,8 +42,7 @@ function App() {
         <Route path="/blogs" element={<BlogsMap />} />
         <Route path="/team" element={<TeamMap />} />
       </Routes>
-      )
-      }
+      )}
       <Footer/>
     </div>
   );

@@ -20,6 +20,7 @@ function AddOns() {
         <div className="row text-center py-5">
           <h2
             data-aos="fade-up"
+            data-aos-once="true"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration="400"
             data-aos-easing="linear"
@@ -36,11 +37,12 @@ function AddOns() {
             <div
               className="card h-100 rounded-3 shadow-sm text-center "
               data-aos="zoom-in"
+              data-aos-once="true"
             >
               {/* <img alt="img" src={require("../assets/about_us/main-g.webp")} /> */}
               <div className="card-body pricing-card-style">
                 <h2 style={{fontWeight:"bolder"}}>
-                3.2M+
+                3M+
                 </h2>
               <p style={{color:"#1B3035",fontWeight:"bold"}}>INVESTMENT PORTFOLIO</p>
               </div>
@@ -51,6 +53,7 @@ function AddOns() {
             <div
               className="card h-100 rounded-3 shadow-sm text-center "
               data-aos="zoom-in"
+              data-aos-once="true"
             >
               {/* <img alt="img" src={require("../assets/about_us/main-g.webp")} /> */}
               <div className="card-body pricing-card-style">
@@ -66,6 +69,7 @@ function AddOns() {
             <div
               className="card h-100 rounded-3 shadow-sm text-center "
               data-aos="zoom-in"
+              data-aos-once="true"
             >
               {/* <img alt="img" src={require("../assets/about_us/main-g.webp")} /> */}
               <div className="card-body pricing-card-style">
@@ -81,6 +85,7 @@ function AddOns() {
             <div
               className="card h-100 rounded-3 shadow-sm text-center "
               data-aos="zoom-in"
+              data-aos-once="true"
             >
               {/* <img alt="img" src={require("../assets/about_us/main-g.webp")} /> */}
               <div className="card-body pricing-card-style">

@@ -10,9 +10,9 @@ function Footer() {
   return (
     <div>
       <div className="container">
-        <footer className="py-5">
+        <footer className="py-4">
           <div className="row row-cols-1 row-cols-md-3 text-start">
-            <div className="col mb-3">
+            <div className="col px-2 mb-3">
               <h4>
                 <img
                   src={require("../assets/logo/ebrand-logo.png")}
