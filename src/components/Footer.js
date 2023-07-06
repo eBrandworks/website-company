@@ -25,9 +25,9 @@ function Footer() {
                 <li className="nav-item mb-2">
                   <a className="nav-link border-0 p-0 text-dark text-start d-flex mob-style-ft-lo">
                     <LocationOnIcon className="color-orange-icon" />
-                    <lable className="ms-2 ml-mob-0">
+                    <label className="ms-2 ml-mob-0">
                     LG-30 Sadiq Trade Center, Gulberg-II, Lahore - Pakistan
-                    </lable>
+                    </label>
                   </a>
                 </li>
                 <li className="nav-item mb-2">
@@ -36,7 +36,7 @@ function Footer() {
                     className="nav-link border-0 p-0 text-dark text-start"
                   >
                     <MailIcon className="color-orange-icon" />
-                    <lable className="ms-2">info@ebrandworks.com</lable>
+                    <label className="ms-2">info@ebrandworks.com</label>
                   </a>
                 </li>
                 <li className="nav-item mb-2">
@@ -45,7 +45,7 @@ function Footer() {
                     className="nav-link border-0 p-0 text-dark text-start"
                   >
                     <PhoneIcon className="color-orange-icon" />
-                    <lable className="ms-2">+92 336 7364035​</lable>
+                    <label className="ms-2">+92 336 7364035​</label>
                   </a>
                 </li>
               </ul>
@@ -91,7 +91,7 @@ function Footer() {
                 <h4>Join Our Newsletter</h4>
                 <p>Monthly digest of what's new and exciting from us.</p>
                 <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                  <label for="newsletter1" className="visually-hidden">
+                  <label htmlFor="newsletter1" className="visually-hidden">
                     Email address
                   </label>
                   <input

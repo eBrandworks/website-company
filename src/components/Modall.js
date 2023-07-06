@@ -34,7 +34,9 @@ export default function BasicModal() {
       >
         <Box sx={style} >
           <Box display={'flex'} justifyContent={"right"} mr={2} >
-      <Button sx={{ borderRadius: "50%", width:"60px",height:"60px",bgcolor:"#1B3035" }}  onClick={handleClose}>< CloseIcon sx={{ color: "#F9B218", width:"40px",height:"40px" }}/></Button>
+      <Button sx={{ borderRadius: "50%", width:"60px",height:"62px",bgcolor:"#1B3035" }}  onClick={handleClose}>
+        
+      < CloseIcon sx={{ color: "#F9B218", width:"40px",height:"40px" }}/></Button>
           </Box>
           <FormModal/>
         </Box>

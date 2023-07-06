@@ -16,7 +16,7 @@ function AddOns() {
     >
       {/* <div className="container"> */}
  
-        <div class="overlay">
+        <div className="overlay">
         <div className="row text-center py-5">
           <h2
             data-aos="fade-up"

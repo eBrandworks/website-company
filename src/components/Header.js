@@ -1,95 +1,27 @@
-
 import { Link } from 'react-router-dom'
-
-// function Header() {
-//   return (
-//     <div className="bg-white shadow-sm fixed-top">
-//       <nav
-//         className="container navbar navbar-expand-lg nav-height"
-//         style={{ height: '80px' }}
-//       >
-//         <div className="container-fluid bg-white-mb">
-// <a className="navbar-brand" href="/">
-//   <h1>
-//     <img
-//       src={require('../assets/logo/ebrand-logo.png')}
-//       alt="optiwise-logo"
-//       width={150}
-//     />
-//   </h1>
-// </a>
-//           <button
-//             className="navbar-toggler"
-//             type="button"
-//             data-bs-toggle="collapse"
-//             data-bs-target="#navbarSupportedContent"
-//             aria-controls="navbarSupportedContent"
-//             aria-expanded="false"
-//             aria-label="Toggle navigation"
-//           >
-//             <span className="navbar-toggler-icon"></span>
-//           </button>
-//           <div
-//             className="collapse navbar-collapse  w-100  justify-content-end"
-//             id="navbarSupportedContent"
-//           >
-//             <form className="d-flex justify-content-center" role="search">
-// <ul className="navbar-nav mb-2 mb-lg-0 align-items-center">
-//   <li className="nav-item">
-//     <a className="nav-link active" aria-current="page" href="/">
-//       Home
-//     </a>
-//   </li>
-//   <li className="nav-item">
-//     <a className="nav-link" href="#services">
-//       Services
-//     </a>
-//   </li>
-//   <li className="nav-item">
-//     <Link className="nav-link" to="/blogs">
-//       Blogs
-//     </Link>
-//   </li>
-//   <li className="nav-item">
-//     <a className="nav-link" href="#about">
-//       About Us
-//     </a>
-//   </li>
-//   <li className="nav-item">
-//     <Link className="nav-link" to="/team">
-//       Team
-//     </Link>
-//   </li>
-
-//   <li className="nav-item">
-//     <a className="nav-link" href="faqs"  style={{marginRight:"15px"}}>
-//       FAQ's
-//     </a>
-//   </li>
-//   <li>
-//     <button  className="btn btn-orange" type="button">
-
-//       Contact US
-//     </button>
-//   </li>
-// </ul>
-//             </form>
-//           </div>
-//         </div>
-//       </nav>
-//     </div>
-//   )
-// }
-
-
+import $ from "jquery";
 import React from 'react'
-
 function Header() {
 
   const hide = () => {
     const bar = document.getElementById("mynavbar")
     bar.classList.remove("show");
   }
+  // direct browser to top right away
+  
+    // if (window.location.hash){
+    //   scroll(0, 0);
+    // }
+    // // takes care of some browsers issue
+    // setTimeout(() => { scroll(0, 0); }, 1);
+
+    $(() => {
+      if (window.location.hash) {
+        $('html,body').animate({
+          scrollTop: $(window.location.hash).offset().top + 'px'
+        }, 1, 'swing');
+      }
+    });
 
   return (
     <React.StrictMode>
@@ -98,57 +30,57 @@ function Header() {
           <div className="row no-wrap">
             <div className="col">
               <div className="nav navbar py-1 navbar-light navbar-expand-md">
-                <a className="navbar-brand" href="/">
+                <Link className="navbar-brand" to="/">
                   <h1>
                     <img
                       src={require('../assets/logo/ebrand-logo.png')}
                       alt="optiwise-logo"
-                      width={150}
+                      width={160}
                     />
                   </h1>
-                </a>
+                </Link>
                 <button className="navbar-toggler" data-bs-target="#mynavbar" data-bs-toggle="collapse"><span
                   className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse text-center justify-content-md-end " id="mynavbar">
                   <ul className="navbar-nav mb-2 mb-lg-0 align-items-center">
                     <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="/">
+                      <Link className="nav-link" onClick={hide} to="/">
                         Home
-                      </a>
+                      </Link>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#services">
+                    <li className="nav-item" onClick={hide}>
+                      <Link className="nav-link" to="/#Services">
                         Services
-                      </a>
+                      </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={hide}>
                       <Link className="nav-link" to="/blogs">
                         Blogs
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#about">
+                    <li className="nav-item" onClick={hide}>
+                      <Link className="nav-link" to="/#about">
                         About Us
-                      </a>
+                      </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={hide}>
                       <Link className="nav-link" to="/team">
                         Team
                       </Link>
                     </li>
 
-                    <li className="nav-item">
-                      <a className="nav-link" href="#faqs" style={{ marginRight: "15px" }}>
+                    <li className="nav-item" onClick={hide}>
+                      <Link className="nav-link" to="/#Faqs" style={{ marginRight: "15px" }}>
                         FAQ's
-                      </a>
+                      </Link>
                     </li>
-                    <li>
-                      <a href='#contact'>
+                    <li className="nav-item" onClick={hide}>
+                      <Link to='/#contact'>
                         <button className="btn btn-orange" type="button">
                           Contact US
                         </button>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

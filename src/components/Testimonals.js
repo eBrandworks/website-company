@@ -19,12 +19,12 @@ const Testimonals = () => {
     <div
     
       id="carouselExampleDark"
-      class="carousel  slide"
+      className="carousel  slide"
       data-bs-ride="carousel"
     >
       <div className="container">
-        <div class="carousel-inner" >
-          <div class="carousel-item active" data-bs-interval="10000" >
+        <div className="carousel-inner" >
+          <div className="carousel-item active" data-bs-interval="10000" >
             <div className="card border-0 align-items-center card-hov" style={{backgroundColor:"#f9f9f9",height:"100%"}}>
               <img
                 src={require("../assets/testimonals/1.webp")}
@@ -63,7 +63,7 @@ const Testimonals = () => {
               </div>
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
+          <div className="carousel-item" data-bs-interval="2000">
             <div className="card border-0 align-items-center h-100 card-hov" style={{backgroundColor:"#f9f9f9",height:"100%"}}>
               <img
                 src={require("../assets/testimonals/2.jpeg")}
@@ -102,7 +102,7 @@ const Testimonals = () => {
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <div className="card border-0 align-items-center h-100 card-hov" style={{backgroundColor:"#f9f9f9",height:"100%"}}>
               <img
                 src={require("../assets/testimonals/3.jpeg")}
@@ -143,22 +143,22 @@ const Testimonals = () => {
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleDark"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" id="carousel-btn" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span className="carousel-control-prev-icon" id="carousel-btn" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleDark"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
     </div>
