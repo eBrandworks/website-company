@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import $ from "jquery";
 import React from 'react'
 function Header() {
@@ -8,20 +8,30 @@ function Header() {
     bar.classList.remove("show");
   }
   // direct browser to top right away
-  
-    // if (window.location.hash){
-    //   scroll(0, 0);
-    // }
-    // // takes care of some browsers issue
-    // setTimeout(() => { scroll(0, 0); }, 1);
 
-    $(() => {
-      if (window.location.hash) {
-        $('html,body').animate({
-          scrollTop: $(window.location.hash).offset().top + 'px'
-        }, 1, 'swing');
-      }
-    });
+  // if (window.location.hash){
+  //   scroll(0, 0);
+  // }
+  // // takes care of some browsers issue
+  // setTimeout(() => { scroll(0, 0); }, 1);
+
+  $(() => {
+    if (window.location.hash) {
+      $('html,body').animate({
+        scrollTop: $(window.location.hash).offset().top + 'px'
+      }, 1, 'swing');
+    }
+  });
+
+  // const active_Page = window.location.href;
+  // console.log(active_Page);
+  // console.log(document.querySelectorAll("nav a, li a"))
+  // const nav_Link = document.querySelectorAll("nav a, li a").
+  //   forEach(link => {
+  //     if (link.href === active_Page) {
+  //       link.classList.add("active")
+  //     }
+  //   })
 
   return (
     <React.StrictMode>
@@ -30,7 +40,7 @@ function Header() {
           <div className="row no-wrap">
             <div className="col">
               <div className="nav navbar py-1 navbar-light navbar-expand-md">
-                <Link className="navbar-brand" to="/">
+                <NavLink className="navbar-brand" to="/">
                   <h1>
                     <img
                       src={require('../assets/logo/ebrand-logo.png')}
@@ -38,16 +48,16 @@ function Header() {
                       width={160}
                     />
                   </h1>
-                </Link>
+                </NavLink>
                 <button className="navbar-toggler" data-bs-target="#mynavbar" data-bs-toggle="collapse"><span
                   className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse text-center justify-content-md-end " id="mynavbar">
                   <ul className="navbar-nav mb-2 mb-lg-0 align-items-center">
                     <li className="nav-item">
-                      <Link className="nav-link" onClick={hide} to="/">
+                      <NavLink className="nav-link" activeclassname="active" onClick={hide} to="/">
                         Home
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="nav-item" onClick={hide}>
                       <Link className="nav-link" to="/#Services">
@@ -55,9 +65,9 @@ function Header() {
                       </Link>
                     </li>
                     <li className="nav-item" onClick={hide}>
-                      <Link className="nav-link" to="/blogs">
+                      <NavLink className="nav-link" to="/blogs">
                         Blogs
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="nav-item" onClick={hide}>
                       <Link className="nav-link" to="/#about">
@@ -65,9 +75,9 @@ function Header() {
                       </Link>
                     </li>
                     <li className="nav-item" onClick={hide}>
-                      <Link className="nav-link" to="/team">
+                      <NavLink className="nav-link" to="/team">
                         Team
-                      </Link>
+                      </NavLink>
                     </li>
 
                     <li className="nav-item" onClick={hide}>

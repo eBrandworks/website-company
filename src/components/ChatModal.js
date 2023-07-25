@@ -1,9 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-// import FormModal from './modal/FormModal';
 import CloseIcon from "@mui/icons-material/Close";
 import { RiWhatsappFill } from 'react-icons/ri'
 

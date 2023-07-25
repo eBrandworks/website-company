@@ -6,11 +6,10 @@ import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import emailjs from "emailjs-com";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate } from "react-router-dom";
 import { Snackbar } from "@mui/material";
@@ -77,18 +76,18 @@ function ContactForm() {
         )
         .then(
           function (response) {
-            // if (response.status === 200) {
-            //   return setOpen(true)
-            // }
+            if (response.status === 200) {
+              return setOpen(true)
+            }
             navigate("/thankyou");
-            // console.log("SUCCESS!", response.status, response.text);
+            console.log("SUCCESS!", response.status, response.text);
           },
           function (error) {
             if (error) {
               //   return setError(true)
               navigate("/*");
             }
-            // console.log("FAILED...", error);
+            console.log("FAILED...", error);
           }
         );
     } else {

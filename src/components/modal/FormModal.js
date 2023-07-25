@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import emailjs from "emailjs-com";
 import { useNavigate } from "react-router-dom";
 import { Snackbar } from "@mui/material";

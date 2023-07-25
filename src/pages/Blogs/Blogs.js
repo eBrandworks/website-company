@@ -1,33 +1,43 @@
 import React from "react";
 import "./Blogs.css";
+import Post from "./Post";
+import { useEffect, useState } from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
-const Blogs = ({title,img,des}) => {
+const Blogs = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('http://localhost:3001/post')
+      .then(res => {
+        res.json()
+          .then(posts => {
+            setPosts(posts)
+          }).catch((err) => {
+            res.json(err)
+          })
+        if (res.ok) {
+          setLoading(false);
+        }
+      });
+
+  }, []);
   return (
     <div>
-     
-      
-        <div className="col">
-          <div class="card mb-3 blog-card border-0" style={{ maxWidth: "540px",alignItems:"flex-start"}}>
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src={require("../../assets/blogs/banner.jpg")} class="img-fluid rounded-start blog-img" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body d-flex flex-wrap ">
-                  <h5 class="card-title text-start">{title}</h5>
-                  <p class="card-text text-start">
-                    {des}
-                  </p>
-                  {/* <p class="card-text text-start">
-                    12/11/2023
-                  </p> */}
-                  <button className="btn btn-clr">Read More</button>
-                </div>
-              </div>
-           
+      <div className="container">
+        <div className="row my-5">
+          <div className="col">
+            {!loading &&
+              posts.length > 0 && posts.map((post, index) => (
+                <Post key={index} {...post} />
+              ))}
+            {loading && <CircularProgress color="warning" style={{
+              margin: '70px 0'
+            }} />}
+          </div>
         </div>
- 
-      </div>
       </div>
     </div>
   );
