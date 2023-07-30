@@ -70,7 +70,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item mb-2">
-                  <NavLink to="/blogs" className="nav-link p-0 text-muted">
+                  <NavLink to="/blog" className="nav-link p-0 text-muted">
                     Blogs
                   </NavLink>
                 </li>

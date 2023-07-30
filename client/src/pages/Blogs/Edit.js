@@ -3,6 +3,8 @@ import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Navigate, useParams } from 'react-router-dom';
+import axios from 'axios'
+import { BASE_URL } from './helper';
 
 function Edit() {
 
@@ -31,14 +33,13 @@ function Edit() {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:3001/post/' + id)
+    axios(`${BASE_URL}/post/${id}`)
       .then((res) => {
-        res.json().then((postInfo) => {
-          setTitle(postInfo.title);
-          setContent(postInfo.content);
-          setSummary(postInfo.summary);
-        });
+        setTitle(res.data.title);
+        setContent(res.data.content);
+        setSummary(res.data.summary);
       });
+
   }, []);
 
   async function updatePost(e) {
@@ -51,18 +52,18 @@ function Edit() {
     if (file?.[0]) {
       data.set('file', file?.[0]);
     }
-    const response = await fetch('http://localhost:3001/post', {
+    const response = await axios(`${BASE_URL}/post`, {
       method: 'PUT',
-      body: data,
-      credentials: 'include',
+      data: data,
+      withCredentials: true,
     });
-    if (response.ok) {
+    if (response.status === 200) {
       setRedirect(true)
     }
   }
 
   if (redirect) {
-    return <Navigate to={'/blogs'} />
+    return <Navigate to={'/blog'} />
   }
   return (
     <div className='container'>

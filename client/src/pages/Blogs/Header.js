@@ -3,47 +3,49 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { useContext } from "react";
+import { BASE_URL } from './helper';
+import axios from 'axios'
 
 const Header = () => {
-    const {setUserInfo,userInfo} = useContext(UserContext);
+    const { setUserInfo, userInfo } = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:3001/profile', {
+        axios(`${BASE_URL}/profile`, {
+            method: 'GET',
             credentials: 'include',
+            withCredentials: true,         
         }).then(res => {
-            res.json()
-            .then(userinfo => {
-                setUserInfo(userinfo);
-            });
-        }).catch((err)=>{
-            console.log(err);
+            console.log(res);
+            setUserInfo(res.data);
         })
     }, []);
 
-    function logout(){
-        fetch('http://localhost:3001/logout', {
+    async function logout() {
+        await axios(`${BASE_URL}/logout`, {
+            method: 'POST',
             credentials: 'include',
-            method:'POST',
+            // withCredentials: true,
         });
         setUserInfo(null);
     }
     const username = userInfo?.Username;
 
     return (
-        <React.StrictMode>
+        <>
+        
             <nav id="form1" className="navbar navbar-expand bg-body-tertiary">
                 <div className="container justify-content-end">
                     <div className="" id="navbarNavAltMarkup">
                         <div className="navbar-nav header-nav">
                             {username && (
                                 <>
-                                    <Link className="nav-link" to="/blogs/create">Create New Post</Link>
-                                    <Link className="nav-link" to={"/blogs"} style={{cursor:"pointer"}} onClick={logout}>Logout<b>({username})</b></Link>
+                                    <Link className="nav-link" to="/blog/create">Create New Post</Link>
+                                    <a className="nav-link" style={{ cursor: "pointer" }} onClick={logout}>Logout<b>({username})</b></a>
                                 </>
                             )}
                             {!username && (
                                 <>
-                                    <Link className="nav-link" to="/blogs/login#form1">Login </Link>
-                                    <Link className="nav-link" to="/blogs/register#form1">Register</Link>
+                                    <Link className="nav-link" to="/blog/login#form1">Login </Link>
+                                    <Link className="nav-link" to="/blog/register#form1">Register</Link>
                                 </>
                             )}
 
@@ -51,7 +53,7 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-        </React.StrictMode>
+        </>
     )
 }
 

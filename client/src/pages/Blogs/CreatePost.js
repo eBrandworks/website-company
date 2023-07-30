@@ -5,6 +5,9 @@ import 'react-quill/dist/quill.snow.css';
 import { Navigate } from 'react-router-dom';
 import Quill from 'quill';
 import ImageResize from 'quill-image-resize-module-react';
+import { BASE_URL } from './helper';
+import axios from 'axios'
+
 
 Quill.register('modules/imageResize', ImageResize);
 
@@ -15,8 +18,8 @@ const CreatePost = () => {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
-    const [file,setFiles] = useState('');
-    const [redirect, setRedirect] =useState(false)
+    const [files, setFiles] = useState('');
+    const [redirect, setRedirect] = useState(false)
 
     const modules = {
         toolbar: [
@@ -39,25 +42,30 @@ const CreatePost = () => {
         'link', 'image'
     ];
 
-     async function CreateNewPost(ev){
+    async function CreateNewPost(ev) {
         const data = new FormData();
         data.set('title', title);
         data.set('summary', summary);
         data.set('content', content);
-        data.set('file', file[0]);
+        data.set('file', files[0]);
         ev.preventDefault();
-        const res = await fetch('http://localhost:3001/post', {
+        console.log(files);
+        await axios(`${BASE_URL}/post`, {
             method: 'POST',
-            body: data,
-            credentials:'include'
-        });
-        if (res.ok){
-            setRedirect(true)
-        }
+            data: data,
+            withCredentials: true,
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((res)=>{
+            console.log(res)
+            setRedirect(false)
+        })
     }
 
-    if(redirect){
-        return <Navigate to={'/blogs'}/>
+    if (redirect) {
+        return <Navigate to={'/blog'} />
     }
     return (
         <div className='container'>
@@ -68,27 +76,27 @@ const CreatePost = () => {
                             type='title'
                             placeholder='Title'
                             value={title}
-                            onChange={ev=>setTitle(ev.target.value)}
+                            onChange={ev => setTitle(ev.target.value)}
                             required
-                             />
+                        />
                         <input
                             type='summary'
-                            placeholder='Summary' 
-                            value={summary} 
-                            onChange={ev=>setSummary(ev.target.value)} 
-                            required  
-                            /> 
-                        <input type='file' 
-                            onChange={ev=>setFiles(ev.target.files)}
+                            placeholder='Summary'
+                            value={summary}
+                            onChange={ev => setSummary(ev.target.value)}
+                            required
+                        />
+                        <input type='file'
+                            onChange={ev => setFiles(ev.target.files)}
                             required
                         />
                         <ReactQuill
                             value={content}
                             modules={modules}
                             formats={formats}
-                            onChange={newValue=>setContent(newValue)}
-                            theme='snow' 
-                            />
+                            onChange={newValue => setContent(newValue)}
+                            theme='snow'
+                        />
                         <button className='btn btn-orange' style={{ marginTop: '5px' }} >Create Post</button>
                     </form>
                 </div>

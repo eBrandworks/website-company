@@ -6,6 +6,9 @@ import { UserContext } from "./UserContext";
 import Popup from "../../components/Popup";
 import { useFormik } from 'formik';
 import { signinSchema } from './Schemas'
+import axios from 'axios'
+import { BASE_URL } from './helper';
+
 
 const initialValues = {
   Username: '',
@@ -13,21 +16,13 @@ const initialValues = {
 };
 
 const Login = () => {
-  const [redirect, setRedirect] = useState('o')
+  const [redirect, setRedirect] = useState(false)
   const { setUserInfo } = useContext(UserContext);
   const [loading, setLoading] = useState(false)
 
 
-  async function login(e) {
-    // e.preventDefault();
+  async function login() {
     setLoading(true);
-    const res = await fetch("http://localhost:3001/login", {
-      method: 'post',
-      body: JSON.stringify({ Username, Password }),
-      headers: { "Content-Type": "application/json" },
-      credentials: 'include',
-    });
-
     const popup = () => {
 
       const btn = document.getElementById("popup");
@@ -40,17 +35,23 @@ const Login = () => {
         window.scrollTo(X, Y)
       }, 2000);
     }
-    if (res.status === 200) {
-      res.json().then(userinfo => {
-        setUserInfo(userinfo);
-        setRedirect('ok');
-      })
-    } else {
-      setRedirect('k')
+    await axios(`${BASE_URL}/login`, {
+      method: 'POST',
+      data: JSON.stringify({ Username, Password }),
+      headers: { "Content-Type": "application/json"},
+      credentials: 'include',
+      withCredentials: true,
+    }).then(res => {
+      setUserInfo(res.data);
+      setRedirect(true);
+    }).catch(() => {
+      setRedirect(false)
       setLoading(false);
       popup();
-    }
+    })
+
   }
+
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
@@ -82,8 +83,8 @@ const Login = () => {
     }
   }
 
-  if (redirect === 'ok') {
-    return <Navigate to={'/blogs'} />
+  if (redirect) {
+    return <Navigate to={'/blog'} />
   }
   return (
     <div>
@@ -96,7 +97,6 @@ const Login = () => {
           value={values.Username}
           onChange={handleChange}
           onBlur={handleBlur}
-          required
         />
         {errors.Username && touched.Username ? <p className='errors'>{errors.Username}</p> : null}
         <div className='input-group'>
@@ -117,9 +117,8 @@ const Login = () => {
       {loading && <CircularProgress color="warning" style={{
         margin: '70px 0'
       }} />}
-      <Popup message='Wrong Credentials' id='popup' className='d-none' />
+      <Popup message='Wrong Credentials' id='popup' class='d-none' />
     </div>
   );
 };
-
 export default Login;

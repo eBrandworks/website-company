@@ -5,8 +5,8 @@ import { Navigate } from "react-router-dom";
 import Popup from "../../components/Popup";
 import { useFormik } from 'formik';
 import { registrationSchema } from './Schemas'
-// import "../node_modules/bootstrap/dist/css/bootstrap.css"
-// import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
+import { BASE_URL } from './helper';
+import axios from 'axios'
 
 const initialValues = {
   username: '',
@@ -16,34 +16,38 @@ const initialValues = {
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const [loading, setLoading] = useState(false);
-
   async function register() {
     console.log('register');
     setLoading(true);
-    const res = await fetch("http://localhost:3001/register", {
-      method: 'post',
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-    const popup = () => {
+    try {
+      const res = await axios(`${BASE_URL}/register`, {
+        method: 'post',
+        data: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
 
-      const btn = document.getElementById("popup");
-      const X = window.scrollX;
-      const Y = window.scrollY;
-      window.scrollTo(0, 0);
-      btn.className = "d-block"
-      setTimeout(() => {
-        btn.className = "d-none"
-        window.scrollTo(X, Y)
-      }, 2000);
-    }
+      const popup = () => {
+        const btn = document.getElementById("popup");
+        const X = window.scrollX;
+        const Y = window.scrollY;
+        window.scrollTo(0, 0);
+        btn.className = "d-block"
+        setTimeout(() => {
+          btn.className = "d-none"
+          window.scrollTo(X, Y)
+        }, 2000);
+      }
 
-    if (res.ok) {
-      setRedirect(true);
-    } else {
-      setLoading(false);
-      console.log('done');
-      popup();
+      if (res.status === 200) {
+        setRedirect(true);
+      } else {
+        setLoading(false);
+        console.log('done');
+        popup();
+      }
+      
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -77,7 +81,7 @@ const Register = () => {
   }
 
   if (redirect) {
-    return <Navigate to={'/blogs/login#form1'} />
+    return <Navigate to={'/blog/login#form1'} />
   }
   return (
     <div>

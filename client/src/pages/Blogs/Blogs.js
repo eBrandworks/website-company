@@ -3,6 +3,8 @@ import "./Blogs.css";
 import Post from "./Post";
 import { useEffect, useState } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
+import { BASE_URL } from './helper';
+import axios from 'axios'
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -10,18 +12,22 @@ const Blogs = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:3001/post')
+    axios(`${BASE_URL}/posts`)
       .then(res => {
-        res.json()
-          .then(posts => {
-            setPosts(posts)
-          }).catch((err) => {
-            res.json(err)
+        console.log(res)
+        setPosts(res.data)
+        setLoading(false);
+      }).catch((err)=>{
+        console.log(err)
+        if(err.code === "ERR_NETWORK"){
+          axios(`${BASE_URL}/posts`)
+          .then(res => {
+            console.log(res)
+            setPosts(res.data)
+            setLoading(false);
           })
-        if (res.ok) {
-          setLoading(false);
         }
-      });
+      })
 
   }, []);
   return (

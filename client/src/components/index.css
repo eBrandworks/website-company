@@ -394,13 +394,46 @@ li {
   font-size: 17px;
 }
 /* ------------------------- Portfolio ---------------------- */
+@media (min-width: 2040px) and (max-width: 2560px) {
+  #offcanvasNavbar{
+    width: 21%;
+  }  
+}
+@media (min-width: 1540px) and (max-width: 2039px) {
+  #offcanvasNavbar{
+    width: 22%;
+  }  
+}
+@media (min-width: 1200px) and (max-width: 1539px) {
+  #offcanvasNavbar{
+    width: 29%;
+  }  
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #offcanvasNavbar{
+    width: 36%;
+  }  
+}
+@media (min-width: 425px) and (max-width: 767px) {
+  #offcanvasNavbar{
+    width: 320px;
+  }  
+}
+@media (max-width: 424px) {
+  #offcanvasNavbar{
+    width: 270px;
+  }  
+}
+
 .carousel-control-prev-icon {
   background-color: #F9B218 !important;
   padding: 10px !important;
+  z-index: 0;
 }
 .carousel-control-next-icon {
   background-color: #F9B218 !important;
   padding: 10px !important;
+  z-index: 0;
 }
 .overlay {
   position: relative;
