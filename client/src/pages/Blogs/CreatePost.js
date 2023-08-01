@@ -7,6 +7,9 @@ import Quill from 'quill';
 import ImageResize from 'quill-image-resize-module-react';
 import { BASE_URL } from './helper';
 import axios from 'axios'
+import CircularProgress from '@mui/material/CircularProgress';
+// const FormData = require('form-data');
+
 
 
 Quill.register('modules/imageResize', ImageResize);
@@ -20,6 +23,7 @@ const CreatePost = () => {
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const modules = {
         toolbar: [
@@ -43,12 +47,13 @@ const CreatePost = () => {
     ];
 
     async function CreateNewPost(ev) {
+        setLoading(true);
+        ev.preventDefault();
         const data = new FormData();
         data.set('title', title);
         data.set('summary', summary);
         data.set('content', content);
         data.set('file', files[0]);
-        ev.preventDefault();
         console.log(files);
         await axios(`${BASE_URL}/post`, {
             method: 'POST',
@@ -56,11 +61,11 @@ const CreatePost = () => {
             withCredentials: true,
             credentials: 'include',
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'multipart/form-data',
             }
-        }).then((res)=>{
-            console.log(res)
-            setRedirect(false)
+        }).then((res) => {
+            setRedirect(true);
+            setLoading(false);
         })
     }
 
@@ -75,6 +80,7 @@ const CreatePost = () => {
                         <input
                             type='title'
                             placeholder='Title'
+                            name='title'
                             value={title}
                             onChange={ev => setTitle(ev.target.value)}
                             required
@@ -82,12 +88,15 @@ const CreatePost = () => {
                         <input
                             type='summary'
                             placeholder='Summary'
+                            name='summary'
                             value={summary}
                             onChange={ev => setSummary(ev.target.value)}
                             required
                         />
                         <input type='file'
                             onChange={ev => setFiles(ev.target.files)}
+                            // name='file'
+                            accept='image/*'
                             required
                         />
                         <ReactQuill
@@ -97,7 +106,13 @@ const CreatePost = () => {
                             onChange={newValue => setContent(newValue)}
                             theme='snow'
                         />
-                        <button className='btn btn-orange' style={{ marginTop: '5px' }} >Create Post</button>
+                        {!loading &&
+                        <button className='btn btn-orange' style={{ marginTop: '5px' }} >
+                             Create Post
+                        </button>}
+                        {loading && <div className='btn-progress w-100' style={{ marginTop: '5px' }} >
+                             <CircularProgress size={25} className='mt-2 mb-1' style={{ color: "white", fontSize: "12px" }} />
+                        </div>}
                     </form>
                 </div>
             </div>

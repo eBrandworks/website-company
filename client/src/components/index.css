@@ -492,6 +492,11 @@ li {
   color: #ffffff;
   border-radius: 10px !important;
 }
+.btn-progress{
+  background-color: #1B3035;
+  color: #ffffff;
+  border-radius: 10px !important;
+}
 .btn-orange:hover {
   background-color: white;
   border-color: #1B3035;
